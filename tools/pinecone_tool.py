@@ -2,6 +2,7 @@
 Pinecone Vector Search Tool
 
 This tool performs semantic search on documents stored in Pinecone vector database.
+Uses the new Pinecone Python SDK (v3.0+) with direct client initialization.
 """
 
 import os

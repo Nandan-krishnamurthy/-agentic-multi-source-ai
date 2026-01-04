@@ -7,7 +7,7 @@ load_dotenv()
 # LLM
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-# Vector DB
+# Vector DB (Pinecone v3.0+ - no PINECONE_ENVIRONMENT needed)
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME")
 

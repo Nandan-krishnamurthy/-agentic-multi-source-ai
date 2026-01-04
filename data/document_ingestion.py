@@ -3,6 +3,8 @@ Document Ingestion Script for Vector Search
 
 This script reads PDF documents, extracts text, generates embeddings,
 and stores them in Pinecone for semantic search.
+
+Uses the new Pinecone Python SDK (v3.0+) with ServerlessSpec for index creation.
 """
 
 import os
