@@ -1,0 +1,8 @@
+streamlit
+python-dotenv
+groq
+neo4j
+pinecone-client
+sentence-transformers
+pypdf
+tavily-python
