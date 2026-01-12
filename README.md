@@ -189,3 +189,53 @@ Users can upload their own documents for vector-based querying.
 A sample document is included for demonstration.
 
 **Note**: This project is designed for educational and demonstration purposes. Ensure proper security practices when deploying to production.
+
+---
+
+## UI Migration: Streamlit to React
+
+The user interface has been migrated from Streamlit to a **React frontend** with a **FastAPI backend**, providing a more modern and flexible architecture while maintaining the same intelligent agent logic.
+
+### What Changed
+
+- **Frontend**: Replaced Streamlit with a React application (located in `frontend/`)
+- **Backend**: Agent logic now served via FastAPI endpoints (`backend_main.py`)
+- **Agent Core**: All agent functionality (Planner → Executor → Responder) remains unchanged
+
+### Architecture After Migration
+
+```
+React Frontend (Port 3000)
+     ↓
+FastAPI Backend (Port 8000)
+     ↓
+Agent Pipeline (Planner → Executor → Responder)
+     ↓
+Tools (Neo4j, Pinecone, Web Search)
+```
+
+### Running the New Stack
+
+1. **Start the FastAPI backend**:
+   ```bash
+   python -m uvicorn backend_main:app --reload
+   ```
+   API will run at `http://localhost:8000`
+
+2. **Start the React frontend**:
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
+   UI will run at `http://localhost:3000`
+
+### Benefits of the Migration
+
+- **Modern UI/UX**: Enhanced user experience with React components
+- **API-First Design**: Backend exposed as RESTful API for flexible integration
+- **Separation of Concerns**: Clear distinction between frontend and backend responsibilities
+- **Scalability**: Easier to deploy frontend and backend independently
+- **Preserved Logic**: All RAG and agent intelligence remains intact
+
+The legacy Streamlit interface (`app.py`) is still available for reference, but the React frontend is now the recommended interface.
